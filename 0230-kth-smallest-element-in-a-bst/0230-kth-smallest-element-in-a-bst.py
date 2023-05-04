@@ -15,10 +15,10 @@ class Solution:
         while node_stack:
             current_node = node_stack.pop()
             if current_node:
-                if (len(min_heap)<k):
-                    heapq.heappush(min_heap, -current_node.val)
-                else:
-                    heapq.heappushpop(min_heap, -current_node.val)
+                heapq.heappush(min_heap, -current_node.val)
+                if (len(min_heap)>k):
+                    #heapq.heappushpop(min_heap, current_node.val)
+                    heapq.heappop(min_heap)
                 node_stack.append(current_node.right)
                 node_stack.append(current_node.left)
                 
