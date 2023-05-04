@@ -4,15 +4,22 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from typing import Optional
+import heapq
+
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        node_rest=[root]
-        list_node=[]
-        while node_rest!=[]:
-            current_node = node_rest.pop()
-            if current_node!=None:
-                list_node.append(current_node.val)
-                node_rest.append(current_node.left)
-                node_rest.append(current_node.right)
-        list_node=sorted(list_node)
-        return list_node[k-1]
+        min_heap = []
+        node_stack = [root]
+        
+        while node_stack:
+            current_node = node_stack.pop()
+            if current_node:
+                if (len(min_heap)<k):
+                    heapq.heappush(min_heap, -current_node.val)
+                else:
+                    heapq.heappushpop(min_heap, -current_node.val)
+                node_stack.append(current_node.right)
+                node_stack.append(current_node.left)
+                
+        return -min_heap[0]
