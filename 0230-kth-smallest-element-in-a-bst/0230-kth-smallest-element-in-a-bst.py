@@ -17,7 +17,6 @@ class Solution:
             if current_node:
                 heapq.heappush(min_heap, -current_node.val)
                 if (len(min_heap)>k):
-                    #heapq.heappushpop(min_heap, current_node.val)
                     heapq.heappop(min_heap)
                 node_stack.append(current_node.right)
                 node_stack.append(current_node.left)
