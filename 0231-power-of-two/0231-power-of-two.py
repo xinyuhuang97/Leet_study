@@ -11,10 +11,9 @@ class Solution:
 
     
     def div_two(self,n):
-        while n!=1 and n>1:
+        while n!=2 and n>2:
             n=n/2
-        print(n)
-        if n==1:
+        if n==2:
             return True
         return False
 
