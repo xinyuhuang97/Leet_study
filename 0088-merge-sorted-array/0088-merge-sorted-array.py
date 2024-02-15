@@ -10,8 +10,7 @@ class Solution:
                     nums1[0]=nums2[0]
                 else:
                     for index in range(0, m+n):
-                        nums1[index]=nums2[index]
-                        
+                        nums1[index]=nums2[index]      
             else:
                 for index in range(m, m+n):
                     nums1[index]=nums2[n-1]+1
