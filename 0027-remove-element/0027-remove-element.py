@@ -3,7 +3,10 @@ class Solution:
         index=0
         for i in range(len(nums)):
             if nums[i]!=val:
-                nums[index]=nums[i]
-                index+=1
+                if i==index:
+                    index+=1
+                else:
+                    nums[index]=nums[i]
+                    index+=1
         return index
         
