@@ -9,7 +9,6 @@ class Solution:
             suffix[nb-1-i]=suffix[nb-i]*nums[nb-i]
         prefix[nb-1]=prefix[nb-2]*nums[nb-2]
         suffix[0]=suffix[1]*nums[1]
-        print(prefix, suffix)
         for i in range(nb):
             prefix[i]=prefix[i]*suffix[i]
         return prefix
