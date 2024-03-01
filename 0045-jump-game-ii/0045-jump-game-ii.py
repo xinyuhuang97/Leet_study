@@ -16,7 +16,5 @@ class Solution:
                             if dp[i+dis]+1<dp[i]:
                                 dp[i]=dp[i+dis]+1
                         arrive[i]=1
-        print(dp)
-        print(arrive)
         return dp[0]
                     
