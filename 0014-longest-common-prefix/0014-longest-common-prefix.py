@@ -9,7 +9,6 @@ class Solution:
         for i in range(lg_fw):
             letter = first_word[i]
             for word in strs[1:]:
-                #print(word, prefix, word[i], letter)
                 try:
                     letter_word=word[i]
                 except:
@@ -19,6 +18,5 @@ class Solution:
                             return ""
                         else:
                             return prefix
-                print("end")
             prefix+=letter
         return prefix
