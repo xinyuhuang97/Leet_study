@@ -49,16 +49,16 @@ class Solution:
             else:
                 #print(lg-i, lg-(i-(numRows)) )
                 for j in range(lg-i, min(lg-(i-(numRows)),lg) ):
-                    print(s[j],j, i, row, column)
+                    #print(s[j],j, i, row, column)
                     matrix[row, column]=s[j]
                     row+=1
                 bool_zig_zag=True
                 row=numRows-2
                 column+=1
                 i-=numRows
-        print(matrix)
+        #print(matrix)
         string=''.join([matrix[i][j] for i in range(numRows) for j in range(numColumns) if matrix[i][j]!=''])
-        print(string)
+        #print(string)
         return string
                 
                 
