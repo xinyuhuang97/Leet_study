@@ -6,7 +6,6 @@ class Solution:
             return True
         s=s.replace(" ","")      
         list_s="".join(i.lower() for i in s if i.isalnum())
-        print(list_s)
         lg=len(list_s)
         lg_half=int(lg/2)
         for i in range(lg_half):
