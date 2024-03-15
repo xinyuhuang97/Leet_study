@@ -6,12 +6,11 @@ with cte as (
             Lead(id) OVER(ORDER BY id) as next_id
             from Seat 
 )
-select COALESCE( 
-            CASE
+select 
+            (CASE
                 WHEN (id%2=1 and next_id  is not NULL) then next_id
                 WHEN (id%2=0 )then previous_id
-            END,
-            id
-) as id, student
+                ELSE ID
+            END) as id, student
 from cte
 order by id ASC
