@@ -10,7 +10,6 @@ select COALESCE(
             CASE
                 WHEN (id%2=1 and next_id  is not NULL) then next_id
                 WHEN (id%2=0 )then previous_id
-                ELSE ID
             END,
             id
 ) as id, student
