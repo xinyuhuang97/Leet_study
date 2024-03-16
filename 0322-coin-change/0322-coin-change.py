@@ -11,16 +11,13 @@ class Solution:
         for coin in coins:
             if coin<=amount:
                 dp[coin]=1
-        
         deque=collections.deque(coins)
         while deque:
             val=deque.popleft()
-            #print(dp,coins,val)
             for coin in coins:
                 if val+coin>amount:
                     continue
                 if dp[val+coin]>dp[val]+1 or dp[val+coin]==-1:
                     dp[val+coin]=dp[val]+1
                     deque.append(val+coin)
-            #print(deque)
         return dp[amount]
