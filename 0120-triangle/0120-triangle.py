@@ -5,7 +5,6 @@ class Solution:
             return 0
         if nb_level==1:
             return min(triangle[0])
-        #nb_each_level=[x+1 for x in range(nb_level)]
         dp=[[0]*(nb+1) for nb in range(nb_level)]
         dp[0][0]=triangle[0][0]
         for i in range(1,nb_level):
