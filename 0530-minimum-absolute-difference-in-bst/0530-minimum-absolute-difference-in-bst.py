@@ -7,6 +7,7 @@ import collections
 #         self.right = right
 class Solution:
     def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+        
         def InOrderTraversal(val):
             if val==None:
                 return []
@@ -14,13 +15,15 @@ class Solution:
             inorder_list.append(val.val)
             inorder_list+=InOrderTraversal(val.right)
             return inorder_list
+        
         def FindMinDifference(inorder_list):
             lg=len(inorder_list)
             min_val=inf
             for i in range(lg-1):
                 if abs(inorder_list[i]-inorder_list[i+1])<min_val:
-                    min_val=abs(inorder_list[i]-inorder_list[i+1])
+                    min_val=inorder_list[i+1]-inorder_list[i]
             return min_val
+        
         inorder_list=InOrderTraversal(root)
         return FindMinDifference(inorder_list)
         
