@@ -7,25 +7,20 @@ import collections
 #         self.right = right
 class Solution:
     def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
-        dif_dic={}
-        deque=collections.deque([root])
-        while deque:
-            node=deque.pop()
-            if node==None:
-                continue
-            if node.val not in dif_dic.keys():
-                dif_dic[node.val]=inf
-            deque.append(node.left)
-            deque.append(node.right)
-        deque=collections.deque([root])
-        min_dif=inf
-        while deque:
-            node=deque.pop()
-            if node!=None:
-                for key in dif_dic.keys():
-                    if key!=node.val and abs(key-node.val)<min_dif:
-                        min_dif=abs(key-node.val)
-                deque.append(node.left)
-                deque.append(node.right)
-        return min_dif
-                    
+        def InOrderTraversal(val):
+            if val==None:
+                return []
+            inorder_list=InOrderTraversal(val.left)
+            inorder_list.append(val.val)
+            inorder_list+=InOrderTraversal(val.right)
+            return inorder_list
+        def FindMinDifference(inorder_list):
+            lg=len(inorder_list)
+            min_val=inf
+            for i in range(lg-1):
+                if abs(inorder_list[i]-inorder_list[i+1])<min_val:
+                    min_val=abs(inorder_list[i]-inorder_list[i+1])
+            return min_val
+        inorder_list=InOrderTraversal(root)
+        return FindMinDifference(inorder_list)
+        
