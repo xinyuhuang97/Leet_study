@@ -20,16 +20,12 @@ class LRUCache:
         tmp.prev=node
         
     def del_node(self, node):
-        #node.next.prev=node.prev
-        #node.prev.next=node.next
-        prevv = node.prev
-        nextt = node.next
-        prevv.next = nextt
-        nextt.prev = prevv
+        node.next.prev=node.prev
+        node.prev.next=node.next
         
         
     def get(self, key: int) -> int:
-        if key in self.m.keys():
+        if key in self.m:
             ans=self.m[key].value
             node=self.m[key]
             del self.m[key]
