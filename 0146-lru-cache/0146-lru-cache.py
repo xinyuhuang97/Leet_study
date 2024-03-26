@@ -36,9 +36,6 @@ class LRUCache:
         return -1
             
     def put(self, key: int, value: int) -> None:
-        head=self.head
-        while head!=None:
-            head=head.next
         if key in self.m.keys():
             cur=self.m[key]
             del self.m[key]
