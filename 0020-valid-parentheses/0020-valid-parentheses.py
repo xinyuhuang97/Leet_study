@@ -8,14 +8,9 @@ class Solution:
             if s[i] in ['(', '[', '{']:
                 left_char.append(s[i])
             else: 
-                if left_char==[]:
+                if left_char==[] or corres_dic[left_char.pop()]!=s[i]:
                     return False
-                c_left=left_char.pop()
-                if corres_dic[c_left]!=s[i]:
-                    return False
-        if left_char:
-            return False
-        return True
+        return left_char==[]
             
             
 
