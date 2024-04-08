@@ -8,6 +8,6 @@ class Solution:
             else:
                 y=int(stack.pop())
                 x=int(stack.pop())
-                stack.append(int(ops[c](x,y)))
+                stack.append(ops[c](x,y))
         return int(stack[0])
         
