@@ -6,7 +6,6 @@ class Solution:
             if s!="/":
                 last_dir+=s
             if s=="/" or i==len(path)-1 :
-                print(last_dir)
                 if last_dir==".":
                     last_dir=''
                     continue
@@ -19,5 +18,4 @@ class Solution:
                 last_dir=''
         if last_dir!='':
             stack.append(last_dir)
-        print(stack)
         return "/"+"/".join(stack)
