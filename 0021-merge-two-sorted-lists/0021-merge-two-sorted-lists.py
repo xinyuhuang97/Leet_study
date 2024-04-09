@@ -28,5 +28,4 @@ class Solution:
                     list1=list1.next
             else:
                 list1=list1.next
-                    
         return head
