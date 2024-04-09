@@ -9,13 +9,16 @@ class Solution:
             return list2
         if list2==None:
             return list1
-        if list1.val>list2.val:
+        
+        list1, list2= (list1, list2) if list1.val<list2.val else (list2, list1)
+        """if list1.val>list2.val:
             head=list2
             tmp=list1
             list1=list2
             list2=tmp
         else:
-            head=list1
+            head=list1"""
+        head=list1
         while list1!=None and list2!=None:
             if list1.val<=list2.val:
                 if list1.next==None or list2.val<=list1.next.val:
@@ -29,3 +32,5 @@ class Solution:
             else:
                 list1=list1.next
         return head
+    
+ 
