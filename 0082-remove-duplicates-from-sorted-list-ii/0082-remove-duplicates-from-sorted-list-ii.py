@@ -16,7 +16,6 @@ class Solution:
             first=first.next
         curr=head
         while curr.next:
-            #print(len(hashmap_number[curr.next.val]),curr.next.val )
             if len(hashmap_number[curr.next.val])!=1:
                 curr.next=curr.next.next
             else:
