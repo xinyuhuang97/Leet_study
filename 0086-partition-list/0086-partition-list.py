@@ -13,7 +13,6 @@ class Solution:
         head_ge_list=ge_list
         curr=head
         while curr:
-            #print("here",curr.val)
             if curr.val<x:
                 less_list.next=curr
                 less_list=less_list.next
