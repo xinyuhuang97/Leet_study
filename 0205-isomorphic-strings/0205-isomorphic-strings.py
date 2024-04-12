@@ -19,7 +19,6 @@ class Solution:
                 cpt+=1
             else:
                 new_str_t+=dic_t[c]
-        print(new_str_t, new_str_s)
         return new_str_s==new_str_t
         
             
