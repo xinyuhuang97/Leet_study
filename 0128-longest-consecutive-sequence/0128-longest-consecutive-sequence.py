@@ -14,7 +14,6 @@ class Solution:
                 r=mp[num+1][1]
             if bl[num-1]:
                 l=mp[num-1][0]
-            mp[num]= [l, r]
             mp[r]= [l, r]
             mp[l]= [l, r]
             mx = max(r-l+1, mx)
