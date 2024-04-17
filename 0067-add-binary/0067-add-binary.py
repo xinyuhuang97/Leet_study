@@ -11,7 +11,6 @@ class Solution:
             return a
         sum_decimal = self.bi_to_dec(a) + self.bi_to_dec(b)
         s=''
-        print(sum_decimal)
         while sum_decimal:
             s+=str(sum_decimal%2)
             sum_decimal=sum_decimal//2
