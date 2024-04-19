@@ -7,13 +7,12 @@ class Solution:
         result = [] 
         for interval in intervals:
             left_new, right_new = interval[0], interval[1]
-            if right >= left_new and right_new > right:
-                right = right_new
+            if right >= left_new:
+                right = max(right_new, right)
             else:
-                if right_new > right:
-                    result.append([left, right])
-                    left = left_new
-                    right = right_new
+                result.append([left, right])
+                left = left_new
+                right = right_new
         if result==[] or result[-1]!=[left, right]:
             result.append([left, right])
         return result
