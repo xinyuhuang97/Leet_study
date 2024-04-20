@@ -18,7 +18,8 @@ class Solution:
         same_val = all(grid[i][j] == grid[0][0] for i in range(size) for j in range(size))
         if same_val:
             return Node(grid[0][0], True, None, None, None, None)
-        left_size = size // 2
+        left_size = size//2
+        print(grid[:left_size][:left_size])
         topleft = self.construct([row[:left_size] for row in grid[:left_size]])
         topright = self.construct([row[left_size:] for row in grid[:left_size]])
         bottomleft = self.construct([row[:left_size] for row in grid[left_size:]])
